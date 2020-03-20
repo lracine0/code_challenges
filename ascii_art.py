@@ -23,3 +23,67 @@
 #of their canvas, assume that another developer will be responsible for that.
 
 
+# Pseudo code:
+# 10x10 canvas shape 
+# given two (x, y) coordinates for top left and bottom right corner
+# fill char
+
+def default_canvas():
+    """Returns default canvas"""
+
+
+    canvas = [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+              [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+              [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+              [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+              [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+              [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+              [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+              [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+              [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+              [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]]
+
+    return canvas
+
+
+def add_shapes(start_x, start_y, end_x, end_y, fill_char):
+    """Add rectangle to canvas with coordinates set 1 and 2,
+       set 1: top left corner, set 2: bottom right corner"""
+
+
+    canvas = default_canvas()
+
+    for i in range(start_x, end_x):
+        for j in range(start_y, end_y):
+            canvas[i][j] = fill_char
+
+    for i in range(10):
+        for j in range(10):
+            if canvas[i][j] != fill_char:
+                canvas[i][j] = "-"
+
+    print_canvas(canvas)
+
+
+def print_canvas(canvas):
+    """Prints canvas row by row"""
+
+
+    for i in range(10):
+        print(canvas[i])
+
+
+add_shapes(3, 3, 7, 7, "?")
+
+
+
+
+
+
+
+
+
+
+
+
+
