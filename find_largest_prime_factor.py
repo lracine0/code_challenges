@@ -4,18 +4,18 @@
 #What is the largest prime factor of the number 600851475143 ?
 
 def find_largest_prime_factor(number):
+    """finds the largest prime factor of any number"""
+
     largest_prime_factor = 0
+    new_num = number
 
-    for i in range(number):
-        if (i % 2 != 0) and (i % 3 != 0) and (i % 4 != 0) and (i % 5 != 0) 
-        and (i % 6 != 0) and (i % 7 != 0) and (i % 8 != 0) and (i % 9 != 0):
+    for factor in range(2, 40000):
 
-        largest_prime_factor = i
+        while (new_num % factor == 0) and (new_num != factor):
+            new_num = new_num / factor 
+            
 
-    print(largest_prime_factor)
-
-
-
+    print(new_num)
 
 
 
